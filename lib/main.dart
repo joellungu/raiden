@@ -4,6 +4,9 @@ import 'package:get_storage/get_storage.dart';
 
 import 'pages/accueil.dart';
 import 'pages/historique/historique.dart';
+import 'pages/login/login.dart';
+import 'pages/login/login_controller.dart';
+import 'pages/profil/profil_controller.dart';
 import 'utils/traduction.dart';
 
 //
@@ -11,6 +14,11 @@ RxBool choix = true.obs;
 
 void main() async {
   await GetStorage.init();
+  //
+  LoginController loginController = Get.put(LoginController());
+  //
+  ProfilController profilController = Get.put(ProfilController());
+  //
   runApp(Raiden());
 }
 
@@ -28,8 +36,8 @@ class Raiden extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'FolloWed',
-
       debugShowCheckedModeBanner: false,
+
       translations: Traduction(),
       locale: locale, // translations will be displayed in that locale
       fallbackLocale: const Locale('en', 'US'), //en_US
@@ -37,6 +45,7 @@ class Raiden extends StatelessWidget {
 
       theme: ThemeData(primarySwatch: Colors.blue),
       home:
+          //Login()
           //Historique()
           Accueil(),
     );

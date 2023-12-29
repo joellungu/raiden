@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:followed/pages/produit.dart';
 import 'package:followed/utils/requete.dart';
@@ -20,20 +20,27 @@ class RechercheController extends GetxController {
   //
   getColisItemDetails(String code) async {
     //
-    Response response = await requete.postE(
+    http.Response response = await requete.postE(
       "",
       {"code_parcel": code},
     );
     //
-    if (response.isOk) {
+    if (response.statusCode == 200 || response.statusCode == 201) {
+      print("erreur: ${response.statusCode}");
+      print("erreur: ${response.body}");
       //
-      Map e = await response.body;
+      Map e = await jsonDecode(response.body);
       print("resultat: $e");
       //
       if (!e["error"] && e['data'] != null) {
         //
-        resulats = box.read("resulats") ?? {};
+        //resulats = box.read("resulats") ?? {};
         historiques = box.read("historiques") ?? [];
+        historiques.forEach((element) {
+          //
+          resulats.add(element["id"]);
+          //
+        });
         //
         Map ee = e['data'];
         //
@@ -44,21 +51,41 @@ class RechercheController extends GetxController {
           if (ee["is_item"]) {
             //Si c'est un item alors...
             //
+            //ee["raiden_point"] = e["raiden_point"];
             ee["id_item"] = code;
             ee["pacakge_info"] = e['pacakge_info'];
           }
           //
+          ee["raiden_point"] = e["raiden_point"];
+          print("raiden_point: ${e["raiden_point"]}");
+          //
           historiques.add(ee);
           //
+          //box.write("resulats", resulats);
           box.write("historiques", historiques);
           //
           Get.back();
-          return true;
+          //
+          if (ee["is_item"]) {
+            //Get.back();
+            Get.to(ProduitItem(ee));
+          } else {
+            //Get.back();
+            Get.to(Produit(ee));
+          }
           //
         } else {
           //
           Get.back();
-          return true;
+          print("eee: $e");
+          //
+          if (e["is_item"]) {
+            //Get.back();
+            Get.to(ProduitItem(ee));
+          } else {
+            //Get.back();
+            Get.to(Produit(ee));
+          }
           //
         }
       } else {
@@ -74,6 +101,8 @@ class RechercheController extends GetxController {
       }
       //
     } else {
+      print("erreur: ${response.statusCode}");
+      print("erreur: ${response.body}");
       //
       Get.back();
       Get.snackbar(
@@ -90,14 +119,14 @@ class RechercheController extends GetxController {
     //
     print("resultat: $code");
     //
-    Response response = await requete.postE(
+    http.Response response = await requete.postE(
       "",
       {"code_parcel": code},
     );
     //
-    if (response.isOk) {
+    if (response.statusCode == 200 || response.statusCode == 201) {
       //
-      Map e = await response.body;
+      Map e = await jsonDecode(response.body);
       print(e);
       //
       if (!e["error"] && e['data'] != null) {
@@ -117,6 +146,9 @@ class RechercheController extends GetxController {
             ee["id_item"] = code;
             ee["pacakge_info"] = e['pacakge_info'];
           }
+          //
+          ee["raiden_point"] = e["raiden_point"];
+          print("raiden_point: ${e["raiden_point"]}");
           //
           historiques.clear();
           historiques = box.read("historiques") ?? [];

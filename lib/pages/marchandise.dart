@@ -23,60 +23,60 @@ class Marchandise extends StatelessWidget {
         return ListTile(
           onTap: () {
             //
-            Get.dialog(Material(
-              color: Colors.transparent,
-              child: Center(
-                child: Container(
-                  height: Get.size.height / 1.3,
-                  width: Get.size.width / 1.1,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        height: 50,
-                        alignment: Alignment.centerRight,
-                        color: Colors.black,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              ' Iphone 14 Pro max',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                Get.back();
-                              },
-                              icon: const Icon(
-                                Icons.close,
-                                color: Colors.white,
-                                size: 40,
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      Expanded(
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
-                              image: ExactAssetImage(
-                                "assets/iphone-pro-max-14.jpeg",
-                              ),
-                              fit: BoxFit.contain,
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ));
+            // Get.dialog(Material(
+            //   color: Colors.transparent,
+            //   child: Center(
+            //     child: Container(
+            //       height: Get.size.height / 1.3,
+            //       width: Get.size.width / 1.1,
+            //       child: Column(
+            //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //         children: [
+            //           Container(
+            //             height: 50,
+            //             alignment: Alignment.centerRight,
+            //             color: Colors.black,
+            //             child: Row(
+            //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //               children: [
+            //                 Text(
+            //                   ' Iphone 14 Pro max',
+            //                   style: TextStyle(
+            //                     fontSize: 12,
+            //                     color: Colors.white,
+            //                     fontWeight: FontWeight.bold,
+            //                   ),
+            //                 ),
+            //                 IconButton(
+            //                   onPressed: () {
+            //                     Get.back();
+            //                   },
+            //                   icon: const Icon(
+            //                     Icons.close,
+            //                     color: Colors.white,
+            //                     size: 40,
+            //                   ),
+            //                 )
+            //               ],
+            //             ),
+            //           ),
+            //           Expanded(
+            //             child: Container(
+            //               decoration: const BoxDecoration(
+            //                 image: DecorationImage(
+            //                   image: ExactAssetImage(
+            //                     "assets/iphone-pro-max-14.jpeg",
+            //                   ),
+            //                   fit: BoxFit.contain,
+            //                 ),
+            //               ),
+            //             ),
+            //           )
+            //         ],
+            //       ),
+            //     ),
+            //   ),
+            // ));
           },
           leading: Container(
             height: 40,

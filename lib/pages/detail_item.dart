@@ -289,6 +289,28 @@ class DetailItem extends StatelessWidget {
                                   ),
                                 ],
                               ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Raiden Point",
+                                    style: TextStyle(
+                                      fontSize: 11,
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    "${e['raiden_point'] ?? ''}",
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ],
                           ),
                         ),
@@ -308,7 +330,7 @@ class DetailItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
             ),
             child: Container(
-              height: 100,
+              height: 105,
               width: 200,
               decoration: BoxDecoration(
                 //color: Colors.blue.shade700.withOpacity(0.5),
@@ -322,7 +344,7 @@ class DetailItem extends StatelessWidget {
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Container(
-                        height: 210,
+                        //height: 210,
                         width: 100,
                         decoration: BoxDecoration(
                           color: Colors.blue.shade900,
@@ -370,7 +392,7 @@ class DetailItem extends StatelessWidget {
                       child: Align(
                         alignment: Alignment.centerRight,
                         child: Container(
-                          height: 210,
+                          //height: 210,
                           width: 270,
                           decoration: BoxDecoration(
                             //color: Colors.black,
@@ -621,31 +643,31 @@ class DetailItem extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          ElevatedButton(
-            onPressed: () {
-              //
-            },
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.black),
-              shape: MaterialStateProperty.all(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-              ),
-            ),
-            child: Container(
-              alignment: Alignment.center,
-              width: 250,
-              height: 50,
-              child: const Text(
-                "J'ai réçu",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-          )
+          // ElevatedButton(
+          //   onPressed: () {
+          //     //
+          //   },
+          //   style: ButtonStyle(
+          //     backgroundColor: MaterialStateProperty.all(Colors.black),
+          //     shape: MaterialStateProperty.all(
+          //       RoundedRectangleBorder(
+          //         borderRadius: BorderRadius.circular(20),
+          //       ),
+          //     ),
+          //   ),
+          //   child: Container(
+          //     alignment: Alignment.center,
+          //     width: 250,
+          //     height: 50,
+          //     child: const Text(
+          //       "J'ai réçu",
+          //       style: TextStyle(
+          //         color: Colors.white,
+          //         fontSize: 20,
+          //       ),
+          //     ),
+          //   ),
+          // )
         ],
       ),
     );

@@ -26,7 +26,7 @@ class Recherche extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 //color: Colors.amber,
-                color: Colors.blue.shade900.withOpacity(0.5),
+                color: Colors.blue.shade200,
                 borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(
                     50,
@@ -147,19 +147,19 @@ class Recherche extends StatelessWidget {
                       children: [
                         TextField(
                           controller: code,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 25,
                             fontWeight: FontWeight.bold,
                           ),
                           textAlign: TextAlign.center,
                           decoration: InputDecoration(
-                            suffixIcon: Icon(
+                            suffixIcon: const Icon(
                               Icons.search,
                               color: Colors.black,
                               size: 40,
                             ),
                             prefixText: 'Code',
-                            prefixStyle: TextStyle(
+                            prefixStyle: const TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
                             ),
@@ -184,15 +184,9 @@ class Recherche extends StatelessWidget {
                               ),
                             );
                             //
-                            bool accepter = await rechercheController
+                            await rechercheController
                                 .getColisItemDetails(code.text);
-                            if (accepter) {
-                              //Get.back();
-                              choix.value = false;
-                            } else {
-                              //Get.back();
-                              choix.value = true;
-                            }
+
                             //
                           },
                           style: ButtonStyle(

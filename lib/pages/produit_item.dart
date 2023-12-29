@@ -27,13 +27,29 @@ class ProduitItem extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text("Raiden"),
+          title: const Text(
+            "Raiden",
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+          leading: IconButton(
+            onPressed: () {
+              //
+              Get.back();
+            },
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+            ),
+          ),
           centerTitle: true,
-          backgroundColor: Colors.blue.shade900,
+          backgroundColor: Colors.blue.shade200,
           bottom: TabBar(
             indicatorColor: Colors.white,
             indicatorWeight: 2,
             labelColor: Colors.white,
+            unselectedLabelColor: Colors.grey.shade500,
             tabs: const [
               Tab(
                 icon: Icon(Icons.edit_document),

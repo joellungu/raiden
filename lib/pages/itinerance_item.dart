@@ -19,7 +19,7 @@ class ItineranceItem extends StatelessWidget {
           color: Colors.black,
           //nodePosition: 0.5,
           //nodeItemOverlap: false,
-          indicatorTheme: IndicatorThemeData(
+          indicatorTheme: const IndicatorThemeData(
             color: Colors.black,
             size: 0.5,
           ),
