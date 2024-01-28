@@ -1,4 +1,4 @@
-package com.followed.followed
+package com.raiden.raiden
 
 import io.flutter.embedding.android.FlutterActivity
 

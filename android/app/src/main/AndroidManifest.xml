@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.followed.followed">
+    package="com.raiden.raiden">
     <uses-permission android:name="android.permission.INTERNET" />
     
    <application

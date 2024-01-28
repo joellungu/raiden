@@ -50,7 +50,6 @@ class ProfileDetails extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             // ListTile(
-
             //   title: Text(
             //     "Profile",
             //     style: TextStyle(

@@ -43,4 +43,52 @@ class LoginController extends GetxController {
     }
     //
   }
+  //
+
+  Future<void> creerCompte(Map e) async {
+    //pseudo,pwd,profil, etat
+
+    //utilisateur/login/${e['pwd']}/${e['telephone']}
+    // var headers = {'Content-Type': 'application/json'};
+    // var request = http.Request(
+    //     'POST',
+    //     Uri.parse(
+    //         'https://www.raidenexpresssolutions.com/public/api/v1/signup'));
+    // request.body = json.encode(e);
+    // request.headers.addAll(headers);
+
+    // http.StreamedResponse response = await request.send();
+    print(e);
+    //Uri.parse(
+    Response response = await requete.post(
+      "https://www.raidenexpresssolutions.com/public/api/v1/signup",
+      headers: {'Content-Type': 'application/json'},
+      e,
+    );
+
+    if (response.statusCode == 200) {
+      Map rep = response.body;
+      print(rep);
+      Get.back();
+      Get.back();
+      Get.snackbar("Erreur", "${rep['message']}");
+    } else {
+      Map rep = response.body ?? {"message": "Erreur"};
+      Get.back();
+      Get.snackbar("Erreur", "${rep['message']}");
+      print(response.body);
+    }
+
+    // print("rep: ${rep.statusCode}");
+    // print("rep: ${rep.body}");
+    // Get.back();
+    // Get.snackbar(
+    //   "Error",
+    //   "No account with this information",
+    //   colorText: Colors.white,
+    //   backgroundColor: Colors.red.shade900,
+    // );
+
+    //
+  }
 }

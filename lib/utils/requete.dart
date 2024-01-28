@@ -40,6 +40,11 @@ var response = await http.post(url, body: {'name': 'doodle', 'color': 'blue'});
   }
 
   //
+  Future<Response> postEE(String path, var object) async {
+    return post("$url$path", object);
+  }
+
+  //
   Future<Response> deleteE(String path) async {
     return delete("$url$path");
   }

@@ -39,7 +39,12 @@ class _Historique extends State<Historique> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Raiden"),
+        title: const Text(
+          "Raiden",
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
         centerTitle: true,
         backgroundColor: Colors.blue.shade200,
       ),

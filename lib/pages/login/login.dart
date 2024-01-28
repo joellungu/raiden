@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
+import 'creer_compte.dart';
 import 'login_controller.dart';
 
 class Login extends StatelessWidget {
@@ -52,7 +53,7 @@ class Login extends StatelessWidget {
                     height: 150,
                   ),
                   const SizedBox(
-                    height: 70,
+                    height: 20,
                   ),
                   const Align(
                     alignment: Alignment.center,
@@ -66,7 +67,7 @@ class Login extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 70,
+                    height: 20,
                   ),
                   TextFormField(
                     controller: username,
@@ -173,37 +174,36 @@ class Login extends StatelessWidget {
                   const SizedBox(
                     height: 50,
                   ),
-                  // OutlinedButton(
-                  //   onPressed: () {
-                  //     //
-                  //     //Get.to(MdpOublie());
-                  //   },
-                  //   style: ButtonStyle(
-                  //     fixedSize: MaterialStateProperty.all(
-                  //       Size(
-                  //         double.maxFinite,
-                  //         45,
-                  //       ),
-                  //     ),
-                  //     shape:
-                  //         MaterialStateProperty.all(RoundedRectangleBorder(
-                  //       borderRadius: BorderRadius.circular(20),
-                  //     )),
-                  //     //backgroundColor:
-                  //     //  MaterialStateProperty.all(Colors.red.shade900),
-                  //   ),
-                  //   child: Container(
-                  //     alignment: Alignment.center,
-                  //     width: double.maxFinite,
-                  //     child: const Text(
-                  //       "Mot de passe oublié",
-                  //       style: TextStyle(
-                  //         color: Colors.black,
-                  //         fontWeight: FontWeight.bold,
-                  //       ),
-                  //     ),
-                  //   ),
-                  // )
+                  OutlinedButton(
+                    onPressed: () {
+                      //
+                      Get.to(CreerCompte());
+                    },
+                    style: ButtonStyle(
+                      fixedSize: MaterialStateProperty.all(
+                        Size(
+                          double.maxFinite,
+                          45,
+                        ),
+                      ),
+                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      )),
+                      //backgroundColor:
+                      //  MaterialStateProperty.all(Colors.red.shade900),
+                    ),
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: double.maxFinite,
+                      child: const Text(
+                        "Créer un compte",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  )
                 ],
               ),
               //)
