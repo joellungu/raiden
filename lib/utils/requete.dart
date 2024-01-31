@@ -2,9 +2,9 @@ import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
 class Requete extends GetConnect {
-  String url = "http://10.0.2.2:8080/";
-  static String urlSt = "http://10.0.2.2:8080/";
-  //String url = "https://elitestudiodatabase.herokuapp.com/";
+  //String url = "http://10.0.2.2:8080/";
+  //static String urlSt = "http://10.0.2.2:8080/";
+  String url = "https://elitestudiodatabase.herokuapp.com/";
   //static String urlSt = "https://elitestudiodatabase.herokuapp.com/";
   Future<Response> getE(
     String path,

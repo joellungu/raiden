@@ -109,7 +109,7 @@ class CreerCompte extends StatelessWidget {
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      prefixIcon: const Icon(Icons.email_rounded),
+                      prefixIcon: const Icon(Icons.person),
                       hintText: "Postnom",
                     ),
                   ),
@@ -192,7 +192,7 @@ class CreerCompte extends StatelessWidget {
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      prefixIcon: const Icon(Icons.email_rounded),
+                      prefixIcon: const Icon(Icons.phone_android),
                       hintText: "Téléphone",
                     ),
                   ),
@@ -234,11 +234,12 @@ class CreerCompte extends StatelessWidget {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
-                        prefixIcon: Obx(
+                        prefixIcon: Icon(Icons.lock),
+                        suffixIcon: Obx(
                           () => IconButton(
                             icon: vue.value
-                                ? const Icon(Icons.lock)
-                                : const Icon(Icons.lock),
+                                ? const Icon(Icons.remove_red_eye)
+                                : const Icon(Icons.remove_red_eye),
                             onPressed: () {
                               //
                               masquer.value = !masquer.value;

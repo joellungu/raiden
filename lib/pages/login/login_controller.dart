@@ -71,7 +71,7 @@ class LoginController extends GetxController {
       print(rep);
       Get.back();
       Get.back();
-      Get.snackbar("Erreur", "${rep['message']}");
+      Get.snackbar("Succes", "${rep['message']}");
     } else {
       Map rep = response.body ?? {"message": "Erreur"};
       Get.back();
